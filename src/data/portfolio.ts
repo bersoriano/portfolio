@@ -1,5 +1,10 @@
 // Edit this file to personalize the portfolio. Single source of truth.
 
+// Set to your production domain (no trailing slash). Used for SEO metadata,
+// canonical URLs, sitemap, robots, and Open Graph tags.
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://bernardosoriano.com";
+
 export const profile = {
   name: "Bernardo Soriano",
   role: "Software Architect",
@@ -9,7 +14,7 @@ export const profile = {
   email: "bsorianodev@gmail.com",
   calendlyUrl: "https://calendly.com/bersoriano",
   socials: {
-    github: "https://github.com/bsorianodev",
+    github: "https://github.com/bersoriano",
     linkedin: "https://www.linkedin.com/in/bernardosoriano/",
   },
 };
@@ -135,6 +140,82 @@ export const experience: Experience[] = [
     period: "2013",
     summary:
       "Delivered iPad and Android tablet apps letting insurance agents sell products and manage customer information, with custom geolocation and network device plugins using Sencha Touch and Apache Cordova.",
+  },
+];
+
+export const companies: string[] = [
+  "Boston Consulting Group (BCG)",
+  "IBM",
+  "Accenture",
+  "Bank of New York Mellon (BNY Mellon)",
+  "Bank of America",
+  "Merrill Lynch",
+  "Security Service Federal Credit Union (SSFCU)",
+  "Banorte",
+];
+
+export const startups: string[] = [
+  "Fintaak",
+  "Renavest",
+  "Flexible Finance",
+  "Rhino Automotive Glass",
+];
+
+export type Recommendation = {
+  name: string;
+  title: string;
+  relation: string;
+  text: string;
+};
+
+export const recommendations: Recommendation[] = [
+  {
+    name: "Manu Sasi",
+    title: "Senior Engineer / Architect at Bank of America",
+    relation: "Managed Bernardo directly",
+    text: "Great front end and UI/UX developer.",
+  },
+  {
+    name: "Deepak Palkar",
+    title: "Vice President at Bank of America",
+    relation: "Worked with Bernardo on the same team",
+    text: "Bernardo and I worked together at BoA. He keeps himself up to date with the latest web technologies and is always happy to share his knowledge with team members. He taught me some great CSS tricks. He will be a great asset in any team. I wish him the best.",
+  },
+  {
+    name: "Varsha Devadas",
+    title: "Senior AI Solutions Engineer",
+    relation: "Worked with Bernardo on the same team",
+    text: "Bernardo worked with me at Bank of America. He has excellent CSS skills and a great eye for detail. He is very hard working and has always helped teammates out when they had questions. He is a great UI developer and I recommend him as a talented programmer.",
+  },
+  {
+    name: "Carlos León",
+    title: "Product Design Lead",
+    relation: "Worked with Bernardo on different teams",
+    text: "Bernardo is a great software developer. He shows interest in many different areas and learns really quickly. He takes his job very seriously and produces code that is clear, aesthetic, efficient and secure. He's definitively someone I would go to with hard problems — he'd always give me a new perspective I didn't think of before. He doesn't take shortcuts and would go the harder way if that's what's required to produce a better solution. He's also a funny guy and a great co-worker. A very, very talented person.",
+  },
+  {
+    name: "Fabian Miranda",
+    title: "Experience Design Lead",
+    relation: "Was senior to Bernardo",
+    text: "Bernardo is without doubt a leader and self-driven professional who works very effectively and with great results. His technical skills and understanding of business needs are reflected in every product he delivers. He clearly understands when he needs to be a leader and when he needs to be a follower — always with a great attitude.",
+  },
+  {
+    name: "Alejandro Mercado",
+    title: "DevOps Lead · AWS Community Builder",
+    relation: "Was Bernardo's client",
+    text: "Bernardo is an enthusiastic developer and trainer. He is always curious about learning new technologies and he knows how to work in teams in order to deliver astonishing results.",
+  },
+  {
+    name: "Jonathan Salvador Chávez",
+    title: "QA Automation Engineer",
+    relation: "Reported to Bernardo directly",
+    text: "One of the things I admire most is that he is always disposed to share his knowledge with the team. Bernardo is very enthusiastic and a great coworker.",
+  },
+  {
+    name: "Alejandro Gutiérrez",
+    title: "Senior UX Consultant, Information Architect",
+    relation: "Worked with Bernardo on different teams",
+    text: "Extensamente recomiendo la calidad y cualidad en el trabajo de Bernardo Soriano. Durante el tiempo que participé en varios proyectos con él y su equipo, demostró su compromiso y confiabilidad, además de estar preparado para los retos que se le presentaron. Siendo, por sobre todo, una excelente persona.",
   },
 ];
 
