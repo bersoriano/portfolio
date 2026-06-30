@@ -45,7 +45,7 @@ export const skills: SkillGroup[] = [
   },
   {
     category: "Practice & Delivery",
-    items: ["Architecture", "Team Leadership", "CI/CD", "OAuth2", "Cypress", "Jasmine / Karma", "Agile / Sprints"],
+    items: ["Architecture", "Team Leadership", "CI/CD", "OAuth2", "Cypress", "Playwright", "Jasmine / Karma", "Agile / Sprints"],
   },
 ];
 
