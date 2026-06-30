@@ -29,23 +29,23 @@ export type SkillGroup = { category: string; items: string[] };
 export const skills: SkillGroup[] = [
   {
     category: "Languages",
-    items: ["TypeScript", "JavaScript", "Java", "C#", "SQL"],
+    items: ["TypeScript", "JavaScript", "Python"],
   },
   {
     category: "Frontend",
-    items: ["Angular", "React", "React Native", "Next.js", "Ionic", "RxJS", "D3.js", "Chart.js"],
+    items: ["Angular", "React", "React Native", "Next.js", "Ionic", "RxJS", "D3.js", "Chart.js", "AG Grid"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "Nest.js", "Spring", ".NET Core", "Flask", "GraphQL", "REST APIs"],
+    items: ["Node.js", "Express", "Nest.js", "Spring", ".NET Core", "Flask", "GraphQL", "REST APIs", "Better Auth"],
   },
   {
     category: "Cloud, Data & AI",
-    items: ["AWS", "Azure", "GCP", "Firebase", "PostgreSQL", "MongoDB", "Oracle SQL", "OpenAI & Anthropic APIs / RAG"],
+    items: ["AWS", "Azure", "GCP", "Supabase", "Firebase", "PostgreSQL", "MongoDB", "Oracle SQL", "OpenAI & Anthropic APIs / RAG"],
   },
   {
     category: "Practice & Delivery",
-    items: ["Architecture", "Team Leadership", "CI/CD", "OAuth2 / BetterAuth", "Cypress", "Jasmine / Karma", "Agile / Sprints"],
+    items: ["Architecture", "Team Leadership", "CI/CD", "OAuth2", "Cypress", "Jasmine / Karma", "Agile / Sprints"],
   },
 ];
 
@@ -59,16 +59,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Full-Stack Cloud Platforms — Renavest",
-    description:
-      "Architected and built fin-tech cloud platforms from scratch, used by thousands. Backend APIs on AWS, secure auth with BetterAuth, and RAG features powered by the OpenAI and Anthropic APIs.",
-    tags: ["TypeScript", "Node.js", "Next.js", "AWS", "RAG"],
-  },
-  {
     title: "Wealth Management Data Grid — BNY Mellon",
     description:
       "Led a pod building a dynamic data-grid app letting wealth managers categorize accounts, allocate client assets, and generate financial reports, with Chart.js net-worth and allocation visualizations.",
     tags: ["Angular", "GCP", "MongoDB", "Flask", "GraphQL"],
+  },
+  {
+    title: "Healthcare Transformation — Boston Consulting Group",
+    description:
+      "Designed the new version of a healthcare provider's digital platform. Built interactive web components alongside experience designers, management consultants, and product managers, delivering web and mobile experiences on a design system that scales across large applications.",
+    tags: ["React", "Nest.js", "Styled Components", "AWS"],
   },
   {
     title: "Trading & Capital Markets Dashboards — Accenture (BoA / Merrill Lynch)",
@@ -93,7 +93,7 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    company: "Renavest & other startups",
+    company: "Multiple startups",
     role: "Tech Advisor & Consultant",
     period: "2023 — Now",
     summary:

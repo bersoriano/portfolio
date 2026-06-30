@@ -3,17 +3,20 @@ import { skills } from "@/data/portfolio";
 
 export default function Skills() {
   return (
-    <Section id="skills" title="Skills">
-      <div className="grid gap-8 sm:grid-cols-2">
+    <Section id="skills" title="Capabilities" index="03">
+      <div className="grid gap-px border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((group) => (
-          <div key={group.category}>
-            <h3 className="mb-3 text-base font-medium">{group.category}</h3>
-            <ul className="flex flex-wrap gap-2">
+          <div key={group.category} className="bg-ink p-6">
+            <h3 className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-brass">
+              {group.category}
+            </h3>
+            <ul className="mt-4 space-y-2">
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="rounded-full border border-black/[.1] px-3 py-1 text-sm text-zinc-600 dark:border-white/[.15] dark:text-zinc-300"
+                  className="flex items-baseline gap-2 text-sm text-paper"
                 >
+                  <span className="text-brass/50">·</span>
                   {item}
                 </li>
               ))}

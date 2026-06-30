@@ -3,19 +3,27 @@ import type { ReactNode } from "react";
 type Props = {
   id: string;
   title: string;
+  index?: string;
   children: ReactNode;
 };
 
-export default function Section({ id, title, children }: Props) {
+export default function Section({ id, title, index, children }: Props) {
   return (
     <section
       id={id}
-      className="mx-auto max-w-5xl scroll-mt-16 border-t border-black/[.06] px-6 py-20 dark:border-white/[.08]"
+      className="scroll-mt-20 border-t border-[var(--hairline)]"
     >
-      <h2 className="mb-10 text-sm font-mono font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-        {title}
-      </h2>
-      {children}
+      <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+        <div className="mb-12 flex items-baseline justify-between gap-6">
+          <h2 className="eyebrow">{title}</h2>
+          {index && (
+            <span className="tnum font-mono text-xs text-slate-dim">
+              {index}
+            </span>
+          )}
+        </div>
+        {children}
+      </div>
     </section>
   );
 }

@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0c1116;
+  --ink-raised: #131a22;
+  --brass: #c2a14d;
+  --brass-bright: #d8bd74;
+  --paper: #ece9e0;
+  --slate: #8b95a4;
+  --slate-dim: #5c6573;
+  --hairline: rgba(194, 161, 77, 0.18);
+  --hairline-soft: rgba(236, 233, 224, 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-brass: var(--brass);
+  --color-brass-bright: var(--brass-bright);
+  --color-paper: var(--paper);
+  --color-slate: var(--slate);
+  --color-slate-dim: var(--slate-dim);
+  --color-background: var(--ink);
+  --color-foreground: var(--paper);
+
+  --font-display: var(--font-fraunces);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--ink);
+  color: var(--paper);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular figures for the "ledger" voice */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Mono eyebrow with brass tick */
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+.eyebrow::before {
+  content: "—";
+  margin-right: 0.6em;
+  color: var(--brass);
+  opacity: 0.7;
+}
+
+/* Fine brass rule */
+.rule {
+  border-color: var(--hairline);
+}
+
+::selection {
+  background: rgba(194, 161, 77, 0.28);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

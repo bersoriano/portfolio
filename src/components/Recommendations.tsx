@@ -12,65 +12,66 @@ export default function Recommendations() {
   const current = recommendations[index];
 
   return (
-    <Section id="recommendations" title="Recommendations">
-      <div className="relative">
-        <figure className="flex min-h-[16rem] flex-col rounded-2xl border border-black/[.08] p-8 dark:border-white/[.1]">
-          <blockquote className="flex-1">
-            <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-300">
-              “{current.text}”
-            </p>
-          </blockquote>
-          <figcaption className="mt-6 border-t border-black/[.06] pt-5 dark:border-white/[.08]">
-            <p className="font-medium text-foreground">{current.name}</p>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              {current.title}
-            </p>
-            <p className="mt-1 font-mono text-xs text-zinc-400 dark:text-zinc-500">
-              {current.relation}
-            </p>
-          </figcaption>
-        </figure>
+    <Section id="recommendations" title="In Their Words" index="06">
+      <figure className="border border-[var(--hairline)] bg-ink-raised p-8 sm:p-12">
+        <span aria-hidden className="font-display text-5xl leading-none text-brass">
+          &ldquo;
+        </span>
+        <blockquote className="mt-4 min-h-[10rem]">
+          <p className="font-display text-xl font-light leading-relaxed text-paper sm:text-2xl">
+            {current.text}
+          </p>
+        </blockquote>
+        <figcaption className="mt-8 flex flex-wrap items-baseline justify-between gap-2 border-t border-[var(--hairline)] pt-5">
+          <div>
+            <span className="font-medium text-paper">{current.name}</span>
+            <span className="text-slate"> · {current.title}</span>
+          </div>
+          <span className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-slate-dim">
+            {current.relation}
+          </span>
+        </figcaption>
+      </figure>
 
-        <div className="mt-6 flex items-center justify-between">
+      <div className="mt-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          {recommendations.map((r, i) => (
+            <button
+              key={r.name}
+              type="button"
+              aria-label={`Recommendation ${i + 1}: ${r.name}`}
+              aria-current={i === index}
+              onClick={() => setIndex(i)}
+              className={`h-px transition-all ${
+                i === index
+                  ? "w-8 bg-brass"
+                  : "w-4 bg-slate-dim hover:bg-slate"
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="tnum font-mono text-xs text-slate-dim">
+            {String(index + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}
+          </span>
           <button
             type="button"
             aria-label="Previous recommendation"
             onClick={() => go(index - 1)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/[.12] transition-colors hover:bg-black/[.04] dark:border-white/[.18] dark:hover:bg-white/[.06]"
+            className="flex h-9 w-9 items-center justify-center border border-[var(--hairline)] text-paper transition-colors hover:border-brass hover:text-brass"
           >
             ←
           </button>
-
-          <div className="flex items-center gap-2">
-            {recommendations.map((r, i) => (
-              <button
-                key={r.name}
-                type="button"
-                aria-label={`Go to recommendation ${i + 1}`}
-                aria-current={i === index}
-                onClick={() => setIndex(i)}
-                className={`h-2 rounded-full transition-all ${
-                  i === index
-                    ? "w-6 bg-foreground"
-                    : "w-2 bg-black/20 hover:bg-black/40 dark:bg-white/25 dark:hover:bg-white/50"
-                }`}
-              />
-            ))}
-          </div>
-
           <button
             type="button"
             aria-label="Next recommendation"
             onClick={() => go(index + 1)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/[.12] transition-colors hover:bg-black/[.04] dark:border-white/[.18] dark:hover:bg-white/[.06]"
+            className="flex h-9 w-9 items-center justify-center border border-[var(--hairline)] text-paper transition-colors hover:border-brass hover:text-brass"
           >
             →
           </button>
         </div>
-
-        <p className="mt-4 text-center font-mono text-xs text-zinc-400 dark:text-zinc-500">
-          {index + 1} / {count}
-        </p>
       </div>
     </Section>
   );

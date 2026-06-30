@@ -2,17 +2,17 @@ import { profile } from "@/data/portfolio";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/[.06] dark:border-white/[.08]">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400 sm:flex-row">
-        <p>
+    <footer className="border-t border-[var(--hairline)]">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-10 sm:flex-row">
+        <p className="font-mono text-xs uppercase tracking-[0.16em] text-slate-dim">
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <div className="flex gap-6">
+        <div className="flex gap-6 font-mono text-xs uppercase tracking-[0.16em] text-slate">
           <a
             href={profile.socials.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground"
+            className="transition-colors hover:text-brass"
           >
             GitHub
           </a>
@@ -20,13 +20,13 @@ export default function Footer() {
             href={profile.socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground"
+            className="transition-colors hover:text-brass"
           >
             LinkedIn
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="hover:text-foreground"
+            className="transition-colors hover:text-brass"
           >
             Email
           </a>
