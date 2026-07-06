@@ -1,19 +1,28 @@
-"use client";
+'use client'
 
-import { defineConfig } from "sanity";
-import { structureTool } from "sanity/structure";
+/**
+ * This configuration is used to for the Sanity Studio that’s mounted on the `/app/posts/[[...tool]]/page.tsx` route
+ */
 
-import { sanityDataset, sanityProjectId } from "./src/sanity/env";
-import { schemaTypes } from "./src/sanity/schemaTypes";
+import {visionTool} from '@sanity/vision'
+import {defineConfig} from 'sanity'
+import {structureTool} from 'sanity/structure'
+
+// Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
+import {apiVersion, dataset, projectId} from './src/sanity/env'
+import {schema} from './src/sanity/schemaTypes'
+import {structure} from './src/sanity/structure'
 
 export default defineConfig({
-  name: "default",
-  title: "Portfolio CMS",
-  basePath: "/studio",
-  projectId: sanityProjectId,
-  dataset: sanityDataset,
-  plugins: [structureTool()],
-  schema: {
-    types: schemaTypes,
-  },
-});
+  basePath: '/posts',
+  projectId,
+  dataset,
+  // Add and edit the content schema in the './sanity/schemaTypes' folder
+  schema,
+  plugins: [
+    structureTool({structure}),
+    // Vision is for querying with GROQ from inside the Studio
+    // https://www.sanity.io/docs/the-vision-plugin
+    visionTool({defaultApiVersion: apiVersion}),
+  ],
+})
