@@ -19,6 +19,8 @@ export const profile = {
   },
 };
 
+export type Profile = typeof profile;
+
 export const about = [
   "I'm a software architect with 13 years building web and mobile platforms across investment banking, insurance, fin-tech, healthcare, and e-commerce. I work hands-on — from system architecture and product direction down to the code — alongside senior leadership and globally distributed teams.",
   "I've led teams and pods at firms like BNY Mellon, Boston Consulting Group, Accenture, and IBM, shipping customer-facing banking flows, trading dashboards, wealth-management tooling, and full-stack cloud platforms. Lately I focus on cloud architecture on AWS and RAG systems built on the OpenAI and Anthropic APIs.",
@@ -222,4 +224,18 @@ export const recommendations: Recommendation[] = [
 export const education = {
   degree: "B.S. Electronics, Telecommunications & Computer Science",
   school: "Instituto Politécnico Nacional (IPN)",
+};
+
+export type Education = typeof education;
+
+export type PortfolioData = {
+  profile: Profile;
+  about: string[];
+  skills: SkillGroup[];
+  projects: Project[];
+  experience: Experience[];
+  companies: string[];
+  startups: string[];
+  recommendations: Recommendation[];
+  education: Education;
 };

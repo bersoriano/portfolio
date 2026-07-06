@@ -1,7 +1,7 @@
 import Section from "./Section";
-import { skills } from "@/data/portfolio";
+import type { SkillGroup } from "@/data/portfolio";
 
-export default function Skills() {
+export default function Skills({ skills }: { skills: SkillGroup[] }) {
   return (
     <Section id="skills" title="Capabilities" index="03">
       <div className="grid gap-px border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2 lg:grid-cols-3">

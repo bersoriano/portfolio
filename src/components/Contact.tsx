@@ -1,7 +1,7 @@
 import Section from "./Section";
-import { profile } from "@/data/portfolio";
+import type { Profile } from "@/data/portfolio";
 
-export default function Contact() {
+export default function Contact({ profile }: { profile: Profile }) {
   return (
     <Section id="contact" title="Get in Touch" index="07">
       <div className="grid gap-10 md:grid-cols-[1.3fr_1fr] md:gap-16">

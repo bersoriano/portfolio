@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { profile } from "@/data/portfolio";
+import type { Profile } from "@/data/portfolio";
 
-export default function Hero() {
+export default function Hero({ profile }: { profile: Profile }) {
   return (
     <section id="top" className="relative isolate overflow-hidden">
       {/* Ambient background */}

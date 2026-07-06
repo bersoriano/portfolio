@@ -1,6 +1,6 @@
-import { profile } from "@/data/portfolio";
+import type { Profile } from "@/data/portfolio";
 
-export default function Footer() {
+export default function Footer({ profile }: { profile: Profile }) {
   return (
     <footer className="border-t border-[var(--hairline)]">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-10 sm:flex-row">

@@ -2,11 +2,18 @@
 
 import { useState } from "react";
 import Section from "./Section";
-import { recommendations } from "@/data/portfolio";
+import type { Recommendation } from "@/data/portfolio";
 
-export default function Recommendations() {
+export default function Recommendations({
+  recommendations,
+}: {
+  recommendations: Recommendation[];
+}) {
   const [index, setIndex] = useState(0);
   const count = recommendations.length;
+  if (count === 0) {
+    return null;
+  }
 
   const go = (next: number) => setIndex((next + count) % count);
   const current = recommendations[index];

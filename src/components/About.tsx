@@ -1,7 +1,6 @@
 import Section from "./Section";
-import { about } from "@/data/portfolio";
 
-export default function About() {
+export default function About({ about }: { about: string[] }) {
   return (
     <Section id="about" title="Profile" index="01">
       <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-16">

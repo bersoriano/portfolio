@@ -1,7 +1,13 @@
 import Section from "./Section";
-import { experience, education } from "@/data/portfolio";
+import type { Education, Experience as ExperienceItem } from "@/data/portfolio";
 
-export default function Experience() {
+export default function Experience({
+  experience,
+  education,
+}: {
+  experience: ExperienceItem[];
+  education: Education;
+}) {
   return (
     <Section id="experience" title="Career Ledger" index="05">
       <div className="border-t border-[var(--hairline)]">

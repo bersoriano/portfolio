@@ -8,22 +8,31 @@ import Experience from "@/components/Experience";
 import Recommendations from "@/components/Recommendations";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { fetchPortfolio } from "@/sanity/fetchPortfolio";
 
-export default function Home() {
+export default async function Home() {
+  const portfolio = await fetchPortfolio();
+
   return (
     <>
       <Navbar />
       <main className="flex-1">
-        <Hero />
-        <About />
-        <Companies />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Recommendations />
-        <Contact />
+        <Hero profile={portfolio.profile} />
+        <About about={portfolio.about} />
+        <Companies
+          companies={portfolio.companies}
+          startups={portfolio.startups}
+        />
+        <Skills skills={portfolio.skills} />
+        <Projects projects={portfolio.projects} />
+        <Experience
+          experience={portfolio.experience}
+          education={portfolio.education}
+        />
+        <Recommendations recommendations={portfolio.recommendations} />
+        <Contact profile={portfolio.profile} />
       </main>
-      <Footer />
+      <Footer profile={portfolio.profile} />
     </>
   );
 }

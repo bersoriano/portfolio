@@ -1,5 +1,4 @@
 import Section from "./Section";
-import { companies, startups } from "@/data/portfolio";
 
 function Roster({ items }: { items: string[] }) {
   return (
@@ -16,7 +15,13 @@ function Roster({ items }: { items: string[] }) {
   );
 }
 
-export default function Companies() {
+export default function Companies({
+  companies,
+  startups,
+}: {
+  companies: string[];
+  startups: string[];
+}) {
   return (
     <Section id="companies" title="Clients & Employers" index="02">
       <div className="space-y-10">

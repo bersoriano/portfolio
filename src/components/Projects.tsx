@@ -1,7 +1,7 @@
 import Section from "./Section";
-import { projects } from "@/data/portfolio";
+import type { Project } from "@/data/portfolio";
 
-export default function Projects() {
+export default function Projects({ projects }: { projects: Project[] }) {
   return (
     <Section id="projects" title="Selected Work" index="04">
       <div className="border-t border-[var(--hairline)]">
