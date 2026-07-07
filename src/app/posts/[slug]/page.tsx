@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PortableBody from "@/components/PortableBody";
 import { fetchPost, fetchPostSlugs } from "@/sanity/fetchPosts";
-import { fetchPortfolio } from "@/sanity/fetchPortfolio";
+import { profile } from "@/data/portfolio";
 
 type Params = { slug: string };
 
@@ -55,10 +55,7 @@ export default async function PostPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const [post, portfolio] = await Promise.all([
-    fetchPost(slug),
-    fetchPortfolio(),
-  ]);
+  const post = await fetchPost(slug);
 
   if (!post) {
     notFound();
@@ -102,7 +99,7 @@ export default async function PostPage({
           </div>
         </article>
       </main>
-      <Footer profile={portfolio.profile} />
+      <Footer profile={profile} />
     </>
   );
 }

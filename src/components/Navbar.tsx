@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { profile } from "@/data/portfolio";
 
 const links = [
@@ -12,11 +15,22 @@ const links = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isLanding = pathname === "/";
+
+  // Hash links only resolve on the landing page; prefix with "/" elsewhere
+  // so they navigate home first, then scroll to the section.
+  const resolve = (href: string) =>
+    href.startsWith("#") && !isLanding ? `/${href}` : href;
+
+  const isActive = (href: string) =>
+    href.startsWith("/") && pathname.startsWith(href);
+
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--hairline)] bg-ink/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <Link
-          href="#top"
+          href={isLanding ? "#top" : "/"}
           className="font-display text-base tracking-tight text-paper"
         >
           {profile.name}
@@ -26,8 +40,11 @@ export default function Navbar() {
           {links.map((l) => (
             <li key={l.href}>
               <Link
-                href={l.href}
-                className="transition-colors hover:text-brass"
+                href={resolve(l.href)}
+                aria-current={isActive(l.href) ? "page" : undefined}
+                className={`transition-colors hover:text-brass ${
+                  isActive(l.href) ? "text-brass" : ""
+                }`}
               >
                 {l.label}
               </Link>

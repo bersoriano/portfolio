@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { fetchPosts } from "@/sanity/fetchPosts";
-import { fetchPortfolio } from "@/sanity/fetchPortfolio";
+import { profile } from "@/data/portfolio";
 
 export const metadata: Metadata = {
   title: "Writing",
@@ -22,10 +22,7 @@ function formatDate(value: string | null) {
 }
 
 export default async function PostsPage() {
-  const [posts, portfolio] = await Promise.all([
-    fetchPosts(),
-    fetchPortfolio(),
-  ]);
+  const posts = await fetchPosts();
 
   return (
     <>
@@ -73,7 +70,7 @@ export default async function PostsPage() {
           </div>
         </section>
       </main>
-      <Footer profile={portfolio.profile} />
+      <Footer profile={profile} />
     </>
   );
 }

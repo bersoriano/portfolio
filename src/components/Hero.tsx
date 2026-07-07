@@ -29,8 +29,8 @@ export default function Hero({ profile }: { profile: Profile }) {
               <span className="block italic text-brass">Soriano</span>
             </h1>
             <p className="mt-8 max-w-xl font-display text-xl font-light leading-relaxed text-slate sm:text-2xl">
-              Thirteen years architecting the systems behind investment banks,
-              fintechs, and the platforms people trust with their money and
+              Thirteen years architecting the digital products for investment banks, healthcare companies,
+              fintechs, startups and the platforms people trust with their money and
               their health.
             </p>
 

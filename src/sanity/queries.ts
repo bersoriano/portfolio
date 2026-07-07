@@ -1,17 +1,5 @@
 import { defineQuery } from "next-sanity";
 
-export const portfolioQuery = defineQuery(`*[_type == "portfolio"][0]{
-  profile,
-  about,
-  skills,
-  projects,
-  experience,
-  companies,
-  startups,
-  recommendations,
-  education
-}`);
-
 export const postsQuery = defineQuery(`*[_type == "post" && defined(slug.current)]
   | order(publishedAt desc){
   _id,
