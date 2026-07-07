@@ -8,7 +8,15 @@ import { profile } from "@/data/portfolio";
 
 export const metadata: Metadata = {
   title: "Writing",
-  description: "Notes and articles on software architecture and engineering.",
+  description: "Notes and articles on software architecture and engineering leadership.",
+  keywords: [
+    "Software Architecture",
+    "Engineering Leadership",
+    "Software Engineering",
+    "Architecture",
+    "Engineering",
+    "Software",
+  ],
   alternates: { canonical: "/posts" },
 };
 

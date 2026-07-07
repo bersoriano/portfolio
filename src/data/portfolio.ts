@@ -7,7 +7,7 @@ export const siteUrl =
 
 export const profile = {
   name: "Bernardo Soriano",
-  role: "Software Architect",
+  role: "Software Architect & Engineering Director",
   tagline:
     "13 years architecting web & mobile platforms for investment banking, insurance, fin-tech, healthcare, and e-commerce — leading globally distributed teams from idea to scale.",
   location: "Austin, TX · Remote",

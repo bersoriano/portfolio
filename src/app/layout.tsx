@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     profile.name,
     profile.role,
     "Software Architect",
+    "Enginering Director",
     "Full-Stack Engineer",
     "Cloud Architecture",
     "Fintech",
